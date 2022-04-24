@@ -20,6 +20,7 @@ So its sort of specific to my needs, but pretty easy to modify.
 BTW to use the TS globals trick to drop in defined global vars from smarty, init a globals_def.tpl with your globals, called from a common smarty file, then reinit them in TS to be called by every TS  file that needs them.  My code below:
 
 **application/view/templates/common/globals_def.tpl**
+
 	<script>
 	{literal}
 	  window.__INITIAL_DATA__ = {
@@ -35,8 +36,9 @@ BTW to use the TS globals trick to drop in defined global vars from smarty, init
 	</script>
 
 **../scripts-dev/globals.ts**
-// @ts-check
-// enable typescript
+
+	// @ts-check
+	// enable typescript
 
 	type InitialData = {
 		siteUrl: string
@@ -54,6 +56,7 @@ BTW to use the TS globals trick to drop in defined global vars from smarty, init
 
 ##BTW smarty layout is as such:
 **application/view/templates/index.tpl**
+
 	{include file="common\\header.tpl"} 
 	{include file="common\\body.tpl"} 
 	{include file="common\\footer.tpl"} 
@@ -62,6 +65,7 @@ header is the usual stuff.  <head></head>.
 
 **application/view/templates/common/body.tpm**
 Then common body (using bootstrap for example - setting up containers and such), important part is this line:
+
 	{include file=$viewPage}
   
   
