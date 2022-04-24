@@ -81,6 +81,8 @@ Then common body (using bootstrap for example - setting up containers and such),
   
  I think thats what you need to make this plug and play, basically.  Oh yeah there's also a nav - I built it so the nav pulls in from the db.   I have a nav_model that pulls that info in and drops it into views/common/navbar.tpl, that's included in the generated views.  
  
- OH! Important! I also am using custom MY_Controller and MY_model!!  I find I cant use CI without some custom helpers.  Check my gists for the base controller I use.   I also setup the constants file with a bunch of stuff.  Damn I should just upload my base setup. 
+ OH! Important! I also am using custom MY_Controller and MY_model!!  I find I cant use CI without some custom helpers.  Check my gists for the base controller I use.   I also use a MY_ApiController but I dont reference that in this version.  
+ 
+ I also setup the constants file with a bunch of stuff.  Damn I should just upload my base setup. 
  
  Any of these stuff you want to change, change it in the skel/ files, they are the base files.  The magik is in the python file.  Any excuse to code in python...esp when im in php land all day
