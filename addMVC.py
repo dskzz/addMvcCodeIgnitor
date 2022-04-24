@@ -135,6 +135,7 @@ class MvcAdd:
         self.doCopy('model')
         self.doCopy('view')
 
+        print( "")
         print("EDITING MVC")
         self.doSed('controller')
         self.doSed('script_include', 'controller')
@@ -164,7 +165,8 @@ class MvcAdd:
         for item in self.fullPathFileList:
             print("rm " + self.fullPathFileList[item])
 
-        print("rmdir " + self.pathList['view'])
+        if not self.api:
+            print("rmdir " + self.pathList['view'])
 
 
 #################################################
@@ -180,7 +182,7 @@ def prompt( cli_args=None ):
 		nameOfMVC = input("Please enter name of MVC> ")
 
 	if len(cli_args) > 0 and cli_args[0] == 'api':
-		includeName = 'n'
+		includeName = nameOfMVC
 		includeTS = 'n'
 		includeNav = 'n'
 		api = 'y'
@@ -189,7 +191,7 @@ def prompt( cli_args=None ):
 		api = input( "API? (No view) Y/N> ")
 
 	if api :
-		includeName = 'n'
+		includeName = nameOfMVC
 		includeTS = 'n'
 		includeNav = 'n'
 		api = 'y'
