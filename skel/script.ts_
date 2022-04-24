@@ -1,0 +1,2 @@
+//VIEWNAMEHERE
+import  {initialData} from './global.js';
